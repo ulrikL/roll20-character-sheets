@@ -1,0 +1,359 @@
+input.sheet-tab-character-sheet:checked ~ div.sheet-tab-character-sheet {                                 
+   display: block;
+}
+
+input.sheet-tab {
+   width: 162px;
+   height: 30px;
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   appearance:none;
+   border:none;
+   outline:none;
+   position: relative;
+   cursor: pointer;
+   z-index: 1;
+}
+
+input.sheet-tab::before {
+   content: attr(title);
+
+   border:1px solid #ccc;
+   border-bottom:1px solid #444;
+   border-radius:4px 4px 0 0;
+   padding-bottom:1px;
+   sheet-text-align: center;
+   display: block;
+   color:#444;
+   width: 160px;
+   line-height: 30px;
+   font-size: 16px;
+   text-align:center
+}
+
+
+input.sheet-tab:active,
+input.sheet-tab:focus {
+   outline:none;
+}
+
+input.sheet-tab:hover::before {
+   background:#67a83f;
+}
+
+input.sheet-tab:checked::before,
+input.sheet-tab:checked:hover::before {
+   border:1px solid #444;
+   border-bottom:1px solid #fff;
+   background:#fff;
+}
+
+/* -----
+Inputs 
+----- */
+
+/* General */
+
+input[type='radio']{
+	background-color:#67a83f; 
+   margin: 6px;  
+}
+
+input[type='text']{
+   background-color:#d4f0c3;
+   margin-left:5px;
+   margin-top:3px;
+   margin-bottom:3px;
+}
+
+input[type='number']{
+	background-color:#d4f0c3;
+   margin-top:3px;
+   margin-bottom:3px;
+   font-weight:bolder;
+}
+
+textarea {
+   resize:vertical;
+}
+
+select {
+   width:120px;
+   margin:0;
+   padding:0;
+   
+}
+
+/* Type Number */
+.sheet-value-singledigit {
+   width:36px !important;
+}
+
+.sheet-value-doubledigit {
+   width:39px !important;
+}
+
+.sheet-value-tripedigit {
+   width:50px !important;
+}
+
+
+/* Type Text */
+
+.sheet-textinput-name,.sheet-textinput-animaltype,.sheet-textinput-animalspecies {
+   width: 300px;
+}
+
+.sheet-textinput-role,.sheet-textinput-age,.sheet-textinput-rank {
+   width: 185px;
+}
+
+.sheet-textinput-skills {
+   width: 240px;
+}
+
+.sheet-textinput-conditions-mutations-talents {
+   width: 285px;
+}
+
+.sheet-textinput-armor {
+   width: 190px;
+}
+
+.sheet-textinput-gear {
+   width: 280px;
+}
+
+.sheet-textinput-weapons {
+   width: 175px;
+}
+
+.sheet-textinput-weapons-notes {
+   width: 138px;
+}
+
+.sheet-textinput-goals {
+   width: 495px;
+}
+
+.sheet-textinput-pcs {
+   width: 450px;
+}
+
+.sheet-textinput-arktype {
+   width: 300px;
+}
+
+.sheet-textinput-other-info {
+   width: 195px;
+}
+
+/* Text Area */
+
+.sheet-text-apperance {
+   margin-left: 5px;
+   margin-bottom: 5px;
+   margin-top: 5px; 
+   width: 269px;
+   height:46px;
+}
+
+.sheet-text-talentmutations {
+   margin-left: 5px;
+   margin-bottom: 5px;
+   margin-top: 5px; 
+   width: 269px;
+   height:40px;
+}
+
+/* ----------------------
+Headers, labels and texts
+------------------------*/
+
+.sheet-text-header {
+   text-align: left;
+	color: white;
+   font-family: fantasy, Impact, Charcoal, sans-serif;
+   font-size:large;
+   text-indent: 10px;
+   height: 30px;
+}
+
+.sheet-text-header-smaller {
+   text-align: left;
+	color: white;
+   font-family: fantasy, Impact, Charcoal, sans-serif;
+   font-size:12;
+   text-indent: 6px;
+   height: 30px;
+}
+
+.sheet-text-stats {
+   text-align: left;
+   color: black;
+   font-family: Tahoma, Geneva, sans-serif;
+   font-size:15;
+   padding-left:5px;
+}
+
+.sheet-text-label {
+   text-align: left;
+   color: black;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size:12;
+   padding-left:5px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+/* ---------
+Meta Windows
+--------- */
+.sheet-character-wrapper{
+     width:940px; 
+}
+
+.sheet-meta1 {
+     float:left;
+     padding-right:20px;
+}
+
+.sheet-meta2 {
+     float:left;
+     padding-bottom:20px;
+     padding-right:20px; 
+}
+
+.sheet-meta3 {
+     float:left; 
+     padding-bottom:20px;     
+}
+
+.sheet-meta4 {
+     float:left;      
+}
+
+.sheet-meta5 {
+     float:left;
+     padding-bottom:20px;      
+}
+
+.sheet-meta6 {
+     float:left;      
+}
+
+/* ------
+Both Tabs
+------ */
+
+.sheet-logo { 
+   width:950px;
+}
+
+/* ------------
+Character Sheet
+------------ */
+
+
+.sheet-singlecell {
+   width: 300px;
+}
+
+.sheet-singlecell-bottompadding {
+   width: 300px;  
+   padding-bottom:20px; 
+}
+
+.sheet-twocell-bottompadding {
+   width: 620px; 
+   padding-bottom:20px;
+}
+
+.sheet-name-role {
+   width: 620px;
+   float: left; 
+   padding-bottom:20px;
+}
+
+.sheet-relationships {
+   width: 620px;
+}
+
+.sheet-full-width {
+	width: 100%;
+}
+
+.sheet-small-width {
+	width: 80px;
+}
+
+.sheet-smallplus-width {
+	width: 90px;
+}
+
+.sheet-large-width {
+	width: 460px;
+}
+
+.sheet-title-row-background-large {
+	background-image:url('http://i.imgur.com/m9ypCeq.png');
+}
+/* -------
+Row Colors 
+------- */
+.sheet-background-dark {
+   background-color:#67a83f;
+}
+
+.sheet-background-medium {
+   background-color:#b2ea8f;
+}
+
+.sheet-background-light {
+   background-color:#d4f0c3;
+}
+
+/* --------- 
+Table Styles 
+--------- */
+
+table {
+  border-collapse:collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.sheet-table-onecolumn{
+   width:300px;
+}
+
+.sheet-table-twocolumn{
+   width:620px;
+}
+
+.sheet-table-threecolumn{
+   width:940px;
+}
+
+.sheet-table-noleft{
+   border-left:none;
+}
+
+.sheet-table-noright{
+   border-right:none;
+}
+
+.sheet-table-noleftright{
+   border-right:none;
+   border-left:none;
+}
+
+.sheet-table-notop{
+   border-top:none;
+}
+
+.sheet-table-layout {
+	table-layout:fixed;
+}

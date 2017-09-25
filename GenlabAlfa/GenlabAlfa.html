@@ -1,0 +1,857 @@
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="base.css">
+		<link rel="stylesheet" type="text/css" href="app.css">
+		<link rel="stylesheet" type="text/css" href="GenlabAlfa.css">
+	</head>
+	
+        <div class="sheet-logo">
+            <img alt="MUTANT GENLAB ALFA" src="http://i.imgur.com/LUmV7Bu.png">
+        </div>
+        <div class="sheet-character-wrapper sheet-tab-content sheet-tab-character-sheet">
+            <div class="sheet-meta1">
+                <div class="sheet-singlecell-bottompadding">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header" colspan="4" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                GRUNDEGENSKAPER
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Styrka
+                            </td>
+                            <td align="center" class="sheet-table-noleft" width="42">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_strength" type="number" value='0'>
+                            </td>
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Skada
+                            </td>
+                            <td align="center" class="sheet-table-noleft" width="86">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_damage" type="number" value='0'> / <input name="attr_damage_max" type="number" value='0' readonly class="sheet-background-medium sheet-value-singledigit"/>
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Kyla
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_agility" type="number" value='0'>
+                            </td>
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Stress
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_fatigue" type="number" value='0'> / <input class="sheet-background-light sheet-value-singledigit" name="attr_fatigue_max" type="number" value='0' readonly />
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Skärpa
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_wits" type="number" value='0'>
+                            </td>
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Förvirring
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_confusion" type="number" value='0'> / <input class="sheet-background-light sheet-value-singledigit" name="attr_confusion_max" type="number" value='0' readonly />
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Instinkt
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_empathy" type="number" value='0'>
+                            </td>
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Tvivel
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_doubt" type="number" value='0'> / <input class="sheet-background-light sheet-value-singledigit" name="attr_doubt_max" type="number" value='0' readonly />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sheet-singlecell-bottompadding">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header" colspan="4" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                TILLSTÅND
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Utsvulten
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input class="sheet-checkbox" name="attr_starving" type="checkbox">
+                            </td>
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Uttorkad
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input class="sheet-checkbox" name="attr_dehydrated" type="checkbox">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Sömnlös
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input name="attr_sleepless" type="checkbox">
+                            </td>
+                            <td class="sheet-table-noright sheet-text-stats">
+                                Nedkyld
+                            </td>
+                            <td align="center" class="sheet-table-noleft">
+                                <input class="sheet-checkbox" name="attr_hypothermic" type="checkbox">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label" colspan="4">
+                                Kritiska skador
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td colspan="4">
+                                <input class="sheet-textinput-conditions-mutations-talents" name="attr_injury" type="text">
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="repeating_injuries">
+                        <table class="sheet-table-onecolumn sheet-table-notop">
+                            <tr class="sheet-background-medium sheet-table-notop">
+                                <td class="sheet-table-notop">
+                                    <input class="sheet-textinput-conditions-mutations-talents" name="attr_injuryrepeating" type="text">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <div class="sheet-singlecell-bottompadding">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header" colspan="4" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                FÄRDIGHETER
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Kämpa på (Styrka)
+                            </td>
+                            <td align="center" width="42px">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_endure" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Ta krafttag (styrka)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_force" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Slåss (styrka)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_fight" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Smyga (kyla)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_sneak" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Fly (kyla)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_move" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Skjuta (kyla)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_shoot" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Speja (skärpa)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_scout" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Förstå sig på (skärpa)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_comprehend" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Känna naturen (skärpa)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_knowthezone" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Sniffa (instinkt)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_senseemotion" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Dominera (instinkt)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_manipulate" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-text-stats">
+                                Vårda (instinkt)
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_heal" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td class="sheet-table-notop">
+                                <input class="sheet-textinput-skills" name="attr_custom-skill-name" type="text">
+                            </td>
+                            <td align="center" class="sheet-background-dark sheet-table-notop">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_custom-skill-value" type="number">
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="repeating_skills">
+                        <table class="sheet-table-onecolumn sheet-table-notop">
+                            <tr class="sheet-background-dark sheet-table-notop">
+                                <td class="sheet-table-notop">
+                                    <input class="sheet-textinput-skills" name="attr_skill-name-repeating" type="text">
+                                </td>
+                                <td align="center" class="sheet-table-notop" width="42px">
+                                    <input class="sheet-background-light sheet-value-singledigit" name="attr_skill-value-repeating" type="number">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <div class="sheet-singlecell-bottompadding">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header" colspan="2" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                RÖTA
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td align="center" colspan="2">
+                                <input checked name="attr_rot" type="radio" value="0"> 
+                                <input name="attr_rot" type="radio" value="1"> 
+                                <input name="attr_rot" type="radio" value="2"> 
+                                <input name="attr_rot" type="radio" value="3"> 
+                                <input name="attr_rot" type="radio" value="4"> 
+                                <input name="attr_rot" type="radio" value="5"> 
+                                <input name="attr_rot" type="radio" value="6"> 
+                                <input name="attr_rot" type="radio" value="7"> 
+                                <input name="attr_rot" type="radio" value="8"> 
+                                <input name="attr_rot" type="radio" value="9">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label sheet-table-noright">
+                                Permanent Röta:
+                            </td>
+                            <td align="center" class="sheet-table-noleft" width="42">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_permanent-rot" type="number">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sheet-singlecell">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header" colspan="4" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                ERFARENHET
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td align="center">
+                                <input checked name="attr_exp" type="radio" value="0"> 
+                                <input name="attr_exp" type="radio" value="1"> 
+                                <input name="attr_exp" type="radio" value="2"> 
+                                <input name="attr_exp" type="radio" value="3"> 
+                                <input name="attr_exp" type="radio" value="4"> 
+                                <input name="attr_exp" type="radio" value="5"> 
+                                <input name="attr_exp" type="radio" value="6"> 
+                                <input name="attr_exp" type="radio" value="7"> 
+                                <input name="attr_exp" type="radio" value="8"> 
+                                <input name="attr_exp" type="radio" value="9">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="sheet-name-role">
+                <table class="sheet-table-twocolumn">
+                    <tr class="sheet-background-medium">
+                        <td class="sheet-table-noright sheet-text-stats">
+                            Namn:
+                        </td>
+                        <td class="sheet-table-noleftright">
+                            <input class="sheet-textinput-name" name="attr_character_name" type="text">
+                        </td>
+                        <td class="sheet-table-noleftright sheet-text-stats">
+                            Syssla:
+                        </td>
+                        <td class="sheet-table-noleft">
+                            <input class="sheet-textinput-role" name="attr_character-role" type="text">
+                        </td>
+                    </tr>
+                    <tr class="sheet-background-medium">
+                        <td class="sheet-table-noright sheet-text-stats">
+                            Djurtyp:
+                        </td>
+                        <td class="sheet-table-noleftright">
+                            <input class="sheet-textinput-animaltype" name="attr_character_animaltype" type="text">
+                        </td>
+                        <td class="sheet-table-noleftright sheet-text-stats">
+                            Ålder:
+                        </td>
+                        <td class="sheet-table-noleft">
+                            <input class="sheet-textinput-age" name="attr_character-age" type="text">
+                        </td>
+                    </tr>
+                    <tr class="sheet-background-medium">
+                        <td class="sheet-table-noright sheet-text-stats">
+                            Art:
+                        </td>
+                        <td class="sheet-table-noleftright">
+                            <input class="sheet-textinput-animalspecies" name="attr_character-animalspecies" type="text">
+                        </td>
+                        <td class="sheet-table-noleftright sheet-text-stats">
+                            Rang:
+                        </td>
+                        <td class="sheet-table-noleft">
+                            <input class="sheet-textinput-rank" name="attr_character-rank" type="text">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="sheet-meta2">
+                <div class="sheet-singlecell-bottompadding">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header" colspan="4" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                UTSEENDE
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label">
+                                Päls: 
+                                <textarea class="sheet-text-apperance sheet-background-light" rows='2' name="attr_fur">
+                                </textarea>
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label">
+                                Ansikte: 
+                                <textarea class="sheet-text-apperance sheet-background-light" rows='2' name="attr_face">
+                                </textarea>
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label">
+                                Kropp: 
+                                <textarea class="sheet-text-apperance sheet-background-light" rows='2' name="attr_body">
+                                </textarea>
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label">
+                                Klädsel: 
+                                <textarea class="sheet-text-apperance sheet-background-light" rows='2' name="attr_clothing">
+                                </textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sheet-singlecell">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header" colspan="2" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                FÖRRÅD
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label">
+                                Ammunition:
+                            </td>
+                            <td align="center" width="49">
+                                <input class="sheet-background-light sheet-value-doubledigit" name="attr_bullets" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label">
+                                Krubb:
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-doubledigit" name="attr_grub" type="number">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label">
+                                Vatten:
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-doubledigit" name="attr_water" type="number">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="sheet-meta3">
+                <div class="sheet-singlecell-bottompadding">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header" colspan="4" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                TALANGER
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td>
+                                <input class="sheet-textinput-conditions-mutations-talents" name="attr_talent-1" type="text">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label">
+                                Beskrivning: 
+                                <textarea class="sheet-text-talentmutations sheet-background-light" name="attr_talentdescription-1">
+                                </textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="repeating_talents">
+                        <table class="sheet-table-onecolumn sheet-table-notop" style="padding-top: 10px">
+                            <tr class="sheet-background-medium sheet-table-notop">
+                                <td class="sheet-table-notop">
+                                    <input class="sheet-textinput-conditions-mutations-talents" name="attr_talent-1" type="text">
+                                </td>
+                            </tr>
+                            <tr class="sheet-background-medium">
+                                <td class="sheet-text-label">
+                                    Beskrivning: 
+                                    <textarea class="sheet-text-talentmutations sheet-background-light" name="attr_talentdescription-1">
+                                    </textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <div class="sheet-singlecell-bottompadding">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header sheet-table-notop" colspan="4" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                DJURFÖRMÅGOR
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td>
+                                <input class="sheet-textinput-conditions-mutations-talents" name="attr_mutation-1" type="text">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td class="sheet-text-label">
+                                Beskrivning: 
+                                <textarea class="sheet-text-talentmutations sheet-background-light" name="attr_mutationdescription-1">
+                                </textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="repeating_mutations">
+                        <table class="sheet-table-onecolumn sheet-table-notop" style="padding-top: 10px">
+                            <tr class="sheet-background-medium sheet-table-notop">
+                                <td class="sheet-table-notop">
+                                    <input class="sheet-textinput-conditions-mutations-talents" name="attr_mutation-name-repeating" type="text">
+                                </td>
+                            </tr>
+                            <tr class="sheet-background-medium">
+                                <td class="sheet-text-label">
+                                    Beskrivning: 
+                                    <textarea class="sheet-text-talentmutations sheet-background-light" name="attr_mutation-description-repeating">
+                                    </textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <div class="sheet-singlecell-bottompadding">
+                    <table class="sheet-table-onecolumn">
+                        <tr class="sheet-text-header">
+                            <td class="sheet-text-header" colspan="4" style="background-image: url('http://i.imgur.com/8brilPN.png')">
+                                VILDSINNESPOÄNG
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-dark">
+                            <td align="center">
+                                <input checked name="attr_mutation" type="radio" value="0"> 
+                                <input name="attr_mutation" type="radio" value="1"> 
+                                <input name="attr_mutation" type="radio" value="2"> 
+                                <input name="attr_mutation" type="radio" value="3"> 
+                                <input name="attr_mutation" type="radio" value="4"> 
+                                <input name="attr_mutation" type="radio" value="5"> 
+                                <input name="attr_mutation" type="radio" value="6"> 
+                                <input name="attr_mutation" type="radio" value="7"> 
+                                <input name="attr_mutation" type="radio" value="8"> 
+                                <input name="attr_mutation" type="radio" value="9">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sheet-singlecell">
+                    <table class="sheet-table-onecolumn sheet-table-layout">
+                        <tr style="background-image:url('http://i.imgur.com/8brilPN.png');">
+                            <td class="sheet-text-header sheet-full-width">
+                                RUSTNING
+                            </td>
+                            <td class="sheet-text-header-smaller sheet-smallplus-width">
+                                Skyddsvärde
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td>
+                                <input class="sheet-textinput-armor" name="attr_armor" type="text">
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_armor-rating" type="number"> / <input class="sheet-background-light sheet-value-singledigit" name="attr_armor-rating_max-1" type="number">
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="repeating_armor">
+                        <table class="sheet-table-onecolumn sheet-table-notop sheet-table-layout">
+                            <tr class="sheet-background-medium sheet-table-notop">
+                                <td class="sheet-table-notop sheet-full-width">
+                                    <input class="sheet-textinput-armor" name="attr_armor-repeating" type="text">
+                                </td>
+                                <td align="center" class="sheet-table-notop sheet-smallplus-width">
+                                    <input class="sheet-background-light sheet-value-singledigit" name="attr_armor-rating-repeating" type="number"> / <input class="sheet-background-light sheet-value-singledigit" name="attr_armor-rating-repeating_max-1" type="number">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="sheet-meta4">
+                <div class="sheet-twocell-bottompadding">
+                    <table class="sheet-table-twocolumn">
+                        <tr style="background-image:url('http://i.imgur.com/m9ypCeq.png')">
+                            <td class="sheet-text-header">
+                                UTRUSTNING
+                            </td>
+                            <td class="sheet-text-header-smaller">
+                                Belastning
+                            </td>
+                            <td class="sheet-text-header-smaller">
+                                Bonus
+                            </td>
+                            <td class="sheet-text-header-smaller">
+                                Antal
+                            </td>
+                            <td class="sheet-text-header-smaller">
+                                Buren
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td>
+                                <input class="sheet-textinput-gear" name="attr_gear-name" type="text">
+                            </td>
+                            <td align="center" valign="middle" width="130">
+                                <select class="sheet-background-light" name="attr_gear-encumberance">
+                                    <option value="0">
+                                        0 - Småpryl
+                                    </option>
+                                    <option value="0.5">
+                                        1/2 - Lätt
+                                    </option>
+                                    <option value="1">
+                                        1 - Vanlig
+                                    </option>
+                                    <option value="2">
+                                        2 - Tung
+                                    </option>
+                                    <option value="3">
+                                        3 - Extra tung
+                                    </option>
+                                </select>
+                            </td>
+                            <td align="center" width="86">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_gear-rank" type="number"> / <input class="sheet-background-light sheet-value-singledigit" name="attr_gearmaxrank-1" type="number">
+                            </td>
+                            <td align="center" width="49">
+                                <input class="sheet-background-light sheet-value-doubledigit" name="attr_gear-amount" type="number">
+                            </td>
+                            <td align="center" width="49">
+                                <input name="attr_gear-carried" type="checkbox">
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="repeating_gear">
+                        <table class="sheet-table-twocolumn sheet-table-notop">
+                            <tr class="sheet-background-medium sheet-table-notop">
+                                <td class="sheet-table-notop">
+                                    <input class="sheet-textinput-gear" name="attr_gear-name-repeating" type="text">
+                                </td>
+                                <td align="center" class="sheet-table-notop" valign="middle" width="130">
+                                    <select class="sheet-background-light" name="attr_gearencumberance">
+                                        <option value="0">
+                                            0 - Småpryl
+                                        </option>
+                                        <option value="0.5">
+                                            1/2 - Lätt
+                                        </option>
+                                        <option value="1">
+                                            1 - Vanlig
+                                        </option>
+                                        <option value="2">
+                                            2 - Tung
+                                        </option>
+                                        <option value="3">
+                                            3 - Extra tung
+                                        </option>
+                                    </select>
+                                </td>
+                                <td align="center" class="sheet-table-notop" width="86">
+                                    <input class="sheet-background-light sheet-value-singledigit" name="attr_gear-rating-repeating" type="number"> / <input class="sheet-background-light sheet-value-singledigit" name="attr_gear-rank-repeating_max" type="number">
+                                </td>
+                                <td align="center" class="sheet-table-notop" width="49">
+                                    <input class="sheet-background-light sheet-value-doubledigit" name="attr_gear-amount-repeating" type="number">
+                                </td>
+                                <td align="center" class="sheet-table-notop" width="49">
+                                    <input name="attr_gear-carried-repeating" type="checkbox">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <div class="sheet-twocell-bottompadding">
+                    <table class="sheet-table-twocolumn sheet-table-layout">
+                        <tr style="background-image:url('http://i.imgur.com/m9ypCeq.png')">
+                            <td class="sheet-text-header" style="width:184px">
+                                VAPEN
+                            </td>
+                            <td class="sheet-text-header-smaller" style="width:90px">
+                                Bonus
+                            </td>
+                            <td class="sheet-text-header-smaller" style="width:52px">
+                                Skada
+                            </td>
+                            <td class="sheet-text-header-smaller" style="width:128px">
+                                Räckvidd
+                            </td>
+                            <td class="sheet-text-header-smaller" style="width:100%">
+                                Övrigt
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-medium">
+                            <td>
+                                <input class="sheet-textinput-weapons" name="attr_weapon" type="text">
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_weapon-bonus" type="number"> / <input class="sheet-background-light sheet-value-singledigit" name="attr_weapon-bonus_max-1" type="number">
+                            </td>
+                            <td align="center">
+                                <input class="sheet-background-light sheet-value-singledigit" name="attr_weapon-damage" type="number">
+                            </td>
+                            <td align="center">
+                                <select class="sheet-background-light" name="attr_weapon-range-1">
+                                    <option value="1">
+                                        Armslängd
+                                    </option>
+                                    <option value="2">
+                                        Nära
+                                    </option>
+                                    <option value="3">
+                                        Kort
+                                    </option>
+                                    <option value="4">
+                                        Lång
+                                    </option>
+                                    <option value="5">
+                                        Distans
+                                    </option>
+                                </select>
+                            </td>
+                            <td>
+                                <input class="sheet-textinput-weapons-notes" name="attr_weapon-special" type="text">
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="repeating_weapon">
+                        <table class="sheet-table-twocolumn sheet-table-notop sheet-table-layout">
+                            <tr class="sheet-background-medium sheet-table-notop">
+                                <td class="sheet-table-notop" style="width:184px">
+                                    <input class="sheet-textinput-weapons" name="attr_weapon-repeating" type="text">
+                                </td>
+                                <td align="center" class="sheet-table-notop" style="width:90px">
+                                    <input class="sheet-background-light sheet-value-singledigit" name="attr_weapon-bonus-repeating" type="number"> / <input class="sheet-background-light sheet-value-singledigit" name="attr_weapon-bonus-repeating_max-1" type="number">
+                                </td>
+                                <td align="center" class="sheet-table-notop" style="width:52px">
+                                    <input class="sheet-background-light sheet-value-singledigit" name="attr_weapon-damage-repeating" type="number">
+                                </td>
+                                <td align="center" class="sheet-table-notop" style="width:128px">
+                                    <select class="sheet-background-light" name="attr_weapon-range-repeating">
+                                        <option value="1">
+                                            Armslängd
+                                        </option>
+                                        <option value="2">
+                                            Nära
+                                        </option>
+                                        <option value="3">
+                                            Kort
+                                        </option>
+                                        <option value="4">
+                                            Lång
+                                        </option>
+                                        <option value="5">
+                                            Distans
+                                        </option>
+                                    </select>
+                                </td>
+                                <td class="sheet-table-notop" style="width:100%">
+                                    <input class="sheet-textinput-weapons-notes" name="attr_weapon-special-repeating" type="text">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <div class="sheet-relationships">
+                    <table class="sheet-table-twocolumn sheet-table-layout">
+                        <tr class="sheet-title-row-background-large">
+                            <td class="sheet-text-header sheet-full-width sheet-table-noright">
+                                RELATIONER
+                            </td>
+                            <td class="sheet-text-header sheet-large-width sheet-table-noleft">
+                            </td>
+                            <td class="sheet-text-header-smaller sheet-small-width">
+                                Närstående
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-light">
+                            <td class="sheet-text-label sheet-table-noright">
+                                Rollperson:
+                            </td>
+                            <td class="sheet-table-noleft">
+                                <input class="sheet-textinput-pcs" name="attr_pcrelationark-1" type="text">
+                            </td>
+                            <td align="center" class="sheet-background-dark">
+                                <input class="sheet-checkbox" name="attr_buddy-1" type="checkbox">
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="repeating_relationships">
+                        <table class="sheet-table-twocolumn sheet-table-notop sheet-table-layout">
+                            <tr class="sheet-background-light sheet-table-notop sheet-full-width">
+                                <td class="sheet-text-label sheet-table-noright sheet-table-notop sheet-full-width">
+                                    Rollperson:
+                                </td>
+                                <td class="sheet-table-noleft sheet-table-notop sheet-large-width">
+                                    <input class="sheet-textinput-pcs" name="attr_relationship-repeating" type="text">
+                                </td>
+                                <td align="center" class="sheet-background-dark sheet-table-notop sheet-small-width">
+                                    <input class="sheet-checkbox" name="attr_buddy-repeating" type="checkbox">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <table class="sheet-table-twocolumn">
+                        <tr class="sheet-background-light" style="border-top:none;">
+                            <td class="sheet-text-label table-noright" colspan="1">
+                                Jag hatar:
+                            </td>
+                            <td class="table-noleft" colspan="2">
+                                <input class="sheet-textinput-goals" name="attr_hate" type="text">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-light">
+                            <td class="sheet-text-label table-noright" colspan="1">
+                                Jag vill skydda:
+                            </td>
+                            <td class="table-noleft" colspan="2">
+                                <input class="sheet-textinput-goals" name="attr_protect" type="text">
+                            </td>
+                        </tr>
+                        <tr class="sheet-background-light">
+                            <td class="sheet-text-label table-noright" colspan="1">
+                                Min stora dröm:
+                            </td>
+                            <td class="table-noleft" colspan="2">
+                                <input class="sheet-textinput-goals" name="attr_dream" type="text">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/worker">
+            //object reference matching core attribute with the associated trauma type
+            var trauma = {
+                strength:"damage_max", 
+                agility:"fatigue_max", 
+                wits:"confusion_max", 
+                empathy:"doubt_max"
+            };   
+
+            //Change max trauma when core attribute changes
+            on("change:strength change:agility change:wits change:empathy", function(eventInfo) {
+                var x = eventInfo.sourceAttribute;
+                getAttrs([x],function(values){
+                    var targetAttr = trauma[x];
+
+                    var attrHash = attrHash || {};  
+                    attrHash[targetAttr] = values[x];
+                    setAttrs(attrHash);
+                });
+            });
+
+            //Ensure max trauma = core attribute when sheet is loaded
+            on("sheet:opened", function() {
+                //create array of attributes from trauma reference var
+                var fetchAttrs = _.keys(trauma).concat(_.values(trauma));
+
+                getAttrs(fetchAttrs, function(attrValues) {
+
+                    //pull values from attrValues, split in half, and compare for equality
+                    var attrArray = _.values(attrValues)
+                    var splitIndex = attrArray.length / 2;
+
+                    var i = attrArray.slice(0, splitIndex);
+                    var j = attrArray.slice(splitIndex);
+
+                    if (!_.isEqual(i,j)) {
+                        //Pass object to settAttrs where: keys = max trauma attr and values = core attr values
+                        var setTraumaHash = _.object(_.values(trauma),i);
+                        setAttrs(setTraumaHash);
+                    };
+                });
+            })
+        </script>
